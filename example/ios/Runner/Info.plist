@@ -39,7 +39,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Require access to camera to capture video</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Require access to microphne to capture audio</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Require access to library to store file</string>
+	<key>io.flutter.embedded_views_preview</key>
+	<true/>
+	
 </dict>
 </plist>

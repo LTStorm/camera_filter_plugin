@@ -13,9 +13,9 @@ typedef void CameraFilterCreatedCallback(CameraFilterController controller);
 
 class CameraFilter extends StatefulWidget {
   final CameraFilterCreatedCallback cameraCreated;
-  final CameraFilterController controller;
+  CameraFilterController controller;
 
-  CameraFilter({@required this.cameraCreated,@required this.controller});
+  CameraFilter({@required this.cameraCreated});
   @override
   _CameraFilterState createState() => _CameraFilterState();
 }
@@ -23,14 +23,13 @@ class CameraFilter extends StatefulWidget {
 class _CameraFilterState extends State<CameraFilter> {
   @override
   Widget build(BuildContext context) {
-    if (defaultTargetPlatform ==TargetPlatform.iOS){
+    if (defaultTargetPlatform == TargetPlatform.iOS) {
       return UiKitView(
         viewType: "camera_filter_plugin",
         onPlatformViewCreated: onPlatformViewCreated,
         creationParamsCodec: const StandardMessageCodec(),
       );
-    }
-    else if (defaultTargetPlatform == TargetPlatform.android){
+    } else if (defaultTargetPlatform == TargetPlatform.android) {
       return AndroidView(
         viewType: "camera_filter_plugin",
         onPlatformViewCreated: onPlatformViewCreated,
@@ -40,20 +39,18 @@ class _CameraFilterState extends State<CameraFilter> {
     return Container();
   }
 
-  Future<void> onPlatformViewCreated(id) async{
-    if(widget.cameraCreated==null){
+  Future<void> onPlatformViewCreated(id) async {
+    if (widget.cameraCreated == null) {
       return;
     }
     widget.cameraCreated(widget.controller);
   }
 }
 
-class CameraFilterController{
+class CameraFilterController {
   MethodChannel _methodChannel;
 
-  CameraFilterController.init(int id){
+  CameraFilterController.init(int id) {
     _methodChannel = new MethodChannel("camera_filter_plugin_$id");
   }
 }
-
-

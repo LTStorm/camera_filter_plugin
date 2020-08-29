@@ -1,0 +1,29 @@
+PODS:
+  - camera_filter_plugin (0.0.1):
+    - Flutter
+    - GPUImage
+  - Flutter (1.0.0)
+  - GPUImage (0.1.7)
+
+DEPENDENCIES:
+  - camera_filter_plugin (from `.symlinks/plugins/camera_filter_plugin/ios`)
+  - Flutter (from `Flutter`)
+
+SPEC REPOS:
+  trunk:
+    - GPUImage
+
+EXTERNAL SOURCES:
+  camera_filter_plugin:
+    :path: ".symlinks/plugins/camera_filter_plugin/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  camera_filter_plugin: 35b730896accc59811e1017cefba668a47f10b0f
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.9.3
